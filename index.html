@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evening walk</title>
+
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-camera position="0 2 3"></a-camera>
+        <a-assets>
+            <a-asset-item id="man" src="models/male_character_ps1-style/scene.gltf"></a-asset-item>
+            <a-asset-item id="bench" src="models/classic_park_bench_low_poly/scene.gltf"></a-asset-item>
+            <a-asset-item id="lamp" src="models/street_lamp/scene.gltf"></a-asset-item>
+            <a-asset-item id="cat" src="models/toon_cat_free/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-entity light="type: ambient; color: #EEE; intensity:0.7;" position="5 10 8"></a-entity>
+
+        <a-entity light="type: point; castShadow:true; color: #EEE; intensity:1.2;" position="-1.65 2.9 -1"></a-entity>
+
+        <a-box src="imgs/road.jpeg" position="0 -0.05 0" depth="4" width="10" height="0.1" shadow="receive:false;cast:false"></a-box>
+        <a-box src="imgs/treesmoon.jpeg" position="0 3 -2" depth="0.01" width="10" height="6" shadow="receive:true" metalness="0" roughness="1"></a-box>
+
+        <a-entity position="-0.5 0 -1" rotation="0 0 0" scale="1 1 1" gltf-model="#man" shadow="cast:true"></a-entity>
+        <a-entity position="-0.5 0.45 -1.6" rotation="0 0 0" scale="1 1 1" gltf-model="#bench" shadow="cast:true"></a-entity>
+        <a-entity position="1 0 -0.7" rotation="0 30 0" scale="0.0015 0.0015 0.0015" gltf-model="#cat" shadow="cast:true"></a-entity>
+        <a-entity position="-2 0 -1" rotation="0 180 0" scale="0.08 0.08 0.08" gltf-model="#lamp" shadow="cast:true"></a-entity>
+
+        <a-sky color="#111155"></a-sky>
+    </a-scene>
+</body>
+</html>
